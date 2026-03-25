@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(//c/Users/estraub/AppData/Roaming/Claude/local-agent-mode-sessions/skills-plugin/533b7de4-684e-4d85-8498-ee534c9d33ad/9d7b5f08-8612-44a0-8879-3e2c3c4233e0/skills/docx/**)",
+      "Bash(pandoc \"C:\\\\Users\\\\estraub\\\\OneDrive - adesso Group\\\\Desktop\\\\Edwin_Straub.docx\" -o cv_output.md)",
+      "Bash(where pandoc:*)",
+      "Bash(where python:*)",
+      "Bash(pip install:*)",
+      "Bash(python -c \":*)",
+      "WebFetch(domain:www.linkedin.com)",
+      "mcp__Claude_Preview__preview_start",
+      "Bash(npm run:*)"
+    ]
+  }
+}

@@ -11,53 +11,58 @@ export async function generateStaticParams() {
 export async function generateMetadata({
   params,
 }: {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }) {
-  const post = getPostBySlug(params.slug);
+  const { slug } = await params;
+  const post = getPostBySlug(slug);
   if (!post) return {};
   return { title: `${post.title} — Edwin Straub` };
 }
 
-export default function PostPage({ params }: { params: { slug: string } }) {
-  const post = getPostBySlug(params.slug);
+export default async function PostPage({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}) {
+  const { slug } = await params;
+  const post = getPostBySlug(slug);
   if (!post) notFound();
 
   return (
-    <div style={{ maxWidth: "800px", margin: "0 auto", padding: "5rem 2rem" }}>
+    <div style={{ maxWidth: "720px", margin: "0 auto", padding: "5rem 2rem 3rem" }}>
       {/* Back */}
       <Link
         href="/blog"
-        className="back-link"
+        className="stagger-1"
         style={{
-          fontSize: "11px",
-          letterSpacing: "0.1em",
-          textTransform: "uppercase",
+          fontSize: "13px",
           color: "var(--muted)",
           display: "inline-flex",
           alignItems: "center",
-          gap: "0.5rem",
+          gap: "0.4rem",
           marginBottom: "3rem",
+          textDecoration: "none",
+          transition: "color 0.2s",
         }}
       >
-        ← Writing
+        &larr; Back to blog
       </Link>
 
       {/* Post header */}
-      <div style={{ marginBottom: "3rem" }}>
+      <div className="stagger-1" style={{ marginBottom: "2.5rem" }}>
         <div
           style={{
-            fontSize: "11px",
-            letterSpacing: "0.1em",
-            textTransform: "uppercase",
+            fontSize: "13px",
             color: "var(--muted)",
+            fontFamily: "var(--font-mono), monospace",
             marginBottom: "1rem",
           }}
         >
           {formatDate(post.date)}
           {post.tags && post.tags.length > 0 && (
             <>
-              <span style={{ margin: "0 0.75rem" }}>·</span>
-              {post.tags.join(", ")}
+              <span style={{ margin: "0 0.75rem", color: "var(--border-strong)" }}>&middot;</span>
+              <span>{post.tags.join(", ")}</span>
             </>
           )}
         </div>
@@ -65,10 +70,10 @@ export default function PostPage({ params }: { params: { slug: string } }) {
         <h1
           style={{
             fontFamily: "var(--font-display), serif",
-            fontSize: "clamp(2rem, 5vw, 3.5rem)",
+            fontSize: "clamp(2rem, 5vw, 3rem)",
             fontWeight: 300,
-            letterSpacing: "-0.03em",
-            lineHeight: 1.1,
+            letterSpacing: "-0.02em",
+            lineHeight: 1.15,
             color: "var(--text)",
             marginBottom: "1rem",
           }}
@@ -80,9 +85,10 @@ export default function PostPage({ params }: { params: { slug: string } }) {
           <p
             style={{
               color: "var(--muted)",
-              fontSize: "1rem",
+              fontSize: "1.1rem",
               fontFamily: "var(--font-display), serif",
               fontStyle: "italic",
+              lineHeight: 1.5,
             }}
           >
             {post.description}
@@ -93,12 +99,12 @@ export default function PostPage({ params }: { params: { slug: string } }) {
       <div
         style={{
           borderTop: "1px solid var(--border)",
-          marginBottom: "3rem",
+          marginBottom: "2.5rem",
         }}
       />
 
       {/* Content */}
-      <article className="prose">
+      <article className="prose stagger-2">
         <MDXRemote source={post.content} />
       </article>
     </div>
