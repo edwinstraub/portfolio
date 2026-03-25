@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export default function Home() {
   return (
     <div style={{ maxWidth: "720px", margin: "0 auto", padding: "5rem 2rem 3rem" }}>
@@ -41,46 +43,28 @@ export default function Home() {
         </p>
       </section>
 
-      {/* Photo placeholder */}
+      {/* Profile photo */}
       <section className="stagger-2" style={{ marginBottom: "5rem" }}>
         <div
           style={{
             width: "100%",
-            aspectRatio: "3 / 2",
-            background: "var(--bg-subtle)",
-            border: "1px dashed var(--border-strong)",
+            maxWidth: "360px",
             borderRadius: "8px",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            flexDirection: "column",
-            gap: "0.5rem",
+            overflow: "hidden",
           }}
         >
-          <svg
-            width="32"
-            height="32"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="var(--muted)"
-            strokeWidth="1.5"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            style={{ opacity: 0.5 }}
-          >
-            <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
-            <circle cx="8.5" cy="8.5" r="1.5" />
-            <polyline points="21 15 16 10 5 21" />
-          </svg>
-          <span
+          <Image
+            src="/profile-picture.jpg"
+            alt="Edwin Straub"
+            width={720}
+            height={900}
             style={{
-              fontSize: "13px",
-              color: "var(--muted)",
-              fontStyle: "italic",
+              width: "100%",
+              height: "auto",
+              display: "block",
             }}
-          >
-            Photo coming soon
-          </span>
+            priority
+          />
         </div>
       </section>
 
