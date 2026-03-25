@@ -125,21 +125,27 @@ export default function Home() {
           </p>
           <p>
             After TBA, I spent a year at Thales working on video management systems for
-            critical infrastructure &mdash; think safety monitoring for trains and stations.
-            Now I&apos;m a Lead Software Engineer at adesso insurance solutions, where I&apos;m
-            building a cloud-native internal developer platform using Kubernetes, Quarkus,
-            and Angular. I help the team move faster: hiring, mentoring, code reviews,
-            breaking big problems into small ones.
+            critical infrastructure &mdash; safety monitoring for trains and stations.
+            Then I joined adesso insurance solutions, where I built a cloud-native
+            internal developer platform using Kubernetes, Quarkus, and Angular.
+            I really enjoyed my time there and met some truly good people. Since late
+            2025, I&apos;ve been the Lead Developer on an internal developer platform
+            at a major German retail company, which I&apos;m enjoying very much. I also
+            serve as the Lead for the Java Competence Center at adesso Romania.
           </p>
           <p>
             What drives me professionally is craft. I care about clean, maintainable code.
             I care about architecture that makes systems comprehensible, not just functional.
             I enjoy working with people &mdash; helping companies create products that are
-            genuinely useful and built to last.
+            genuinely useful and built to last. Hiring, mentoring, code reviews, breaking
+            big problems into small ones &mdash; that&apos;s where I feel most at home.
           </p>
           <p>
-            When I&apos;m not writing code, I&apos;m probably looking up at the stars (the
-            universe is endlessly fascinating), playing guitar, or reading a good book.
+            Outside of work, I love spending time with my family &mdash; that always comes
+            first. I enjoy playing football when I can, losing myself in a good book,
+            picking up the guitar, and reading about astronomy. I&apos;m what you might
+            call an armchair astronomer these days &mdash; more reading than actual
+            observing, though I do own a telescope that deserves more outings.
           </p>
         </div>
       </section>
@@ -162,10 +168,16 @@ export default function Home() {
         </h2>
         <div style={{ display: "flex", flexDirection: "column", gap: "2.5rem" }}>
           <JourneyItem
-            period="2023 &ndash; present"
-            title="Cloud-Native Developer Platforms"
+            period="2025 &ndash; present"
+            title="Internal Developer Platform · Lead Developer"
+            org="adesso (major German retail client)"
+            description="Leading the development of an internal developer platform at a major German retail company. Also serving as Lead for the Java Competence Center at adesso Romania."
+          />
+          <JourneyItem
+            period="2023 &ndash; 2025"
+            title="Cloud-Native Developer Platform"
             org="adesso insurance solutions"
-            description="Leading development of an internal developer platform built on Kubernetes, Quarkus, and Angular. Conducting technical interviews, mentoring developers, creating CI/CD pipelines, writing Kubernetes operators."
+            description="Built an internal developer platform on Kubernetes, Quarkus, and Angular. Conducted technical interviews, mentored developers, created CI/CD pipelines, and wrote Kubernetes operators."
           />
           <JourneyItem
             period="2022 &ndash; 2023"
