@@ -1,0 +1,50 @@
+---
+title: "On Building Platforms People Actually Want to Use"
+date: "2026-03-24"
+description: "Developer experience is not a nice-to-have. It's the product."
+tags: ["platform-engineering", "dx"]
+---
+
+After four years of platform engineering, the most important lesson I've learned is deceptively simple: **the platform is the product, and your engineers are the users**.
+
+This sounds obvious. But in practice, most internal platforms are built the way internal tools have always been built — with the assumption that users will adapt to whatever you give them because they have no choice.
+
+## The invisible tax
+
+Every time a developer has to fight with a tool, they pay a tax. A slow CI pipeline is a tax. An opaque error message is a tax. An undocumented API is a tax. A platform that requires tribal knowledge to operate is a tax.
+
+These taxes don't show up in sprint velocity. They don't appear in incident reports. But they compound quietly, and they are paid in frustration, in context switching, in the best engineers quietly deciding they'd rather work somewhere else.
+
+## What changes when you treat it as a product
+
+When you start treating your platform as a product, you start asking different questions:
+
+- Who are my users, and what are they actually trying to accomplish?
+- Where do people get stuck, and why?
+- What does the path from "I have a new service" to "it's running in production" look like today?
+
+You start doing user research. You talk to the engineers using your tools. You watch them use them — and you resist the urge to explain things when they get confused, because that confusion is data.
+
+## The golden path
+
+The most useful concept I've borrowed from product thinking is the "golden path" — a paved, well-lit road from intent to outcome. Not the only road. But one that works, that's documented, that has guardrails.
+
+A good golden path for deploying a new service might look like:
+
+1. Run a CLI command to scaffold the project
+2. Push to GitHub — CI runs automatically
+3. Open a PR — preview environment spins up
+4. Merge — deploys to staging
+5. Promote to production with one command
+
+Every step of that path that requires a Confluence page, a Slack message, or a tribal elder is a failure of the platform.
+
+## Start small, stay close to the work
+
+You don't build this all at once. You start by watching what people actually do, finding the roughest edges, and smoothing them. Then you do it again.
+
+The platform is never done. But the engineers using it should feel, over time, that someone is listening.
+
+---
+
+*This is the first post on this site. More to come.*
